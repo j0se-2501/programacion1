@@ -60,13 +60,12 @@ public class Empleado implements Serializable{
 	
 	//metodos propios
 	
-	private void aumentarSueldo(int porcentajeAumento) {
+	public void aumentarSueldo(int porcentajeAumento) {
 		this.sueldo*=(1+(porcentajeAumento/100));
 	}
 	
-	private void despedir() {
-		this.empresa=null;
-		this.empresa.arrayEmpleados[this.numEmpleado]=null;
+	public void despedir() {
+		empresa.despideEmpleado(this.numEmpleado);
 	}
 	
 	
