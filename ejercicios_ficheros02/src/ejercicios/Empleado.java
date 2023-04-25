@@ -18,10 +18,10 @@ public class Empleado implements Serializable{
 		this.nombre = nombre;
 		this.sueldo = sueldo;
 		this.empresa = empresa;
-		this.numEmpleado = ++empresa.contadorNumEmpleado;
+		this.numEmpleado = ++empresa.contadorNumEmpleado; //de esta forma el numero de empleado es autoincremental
 	}
 	
-	protected Empleado(String nombre, int sueldo, Empresa empresa, int numEmpleado) {
+	protected Empleado(String nombre, int sueldo, Empresa empresa, int numEmpleado) { //constructor para asignarle un numero de empleado concreto; lo pide pero no se usa en el ejercicio
 		super();
 		this.nombre = nombre;
 		this.sueldo = sueldo;
@@ -60,12 +60,12 @@ public class Empleado implements Serializable{
 	
 	//metodos propios
 	
-	public void aumentarSueldo(int porcentajeAumento) {
+	public void aumentarSueldo(int porcentajeAumento) { //metodo para aumentar el sueldo, simple calculo y ya
 		this.sueldo*=(1+(porcentajeAumento/100));
 	}
 	
 	public void despedir() {
-		empresa.despideEmpleado(this.numEmpleado);
+		empresa.despideEmpleado(this.numEmpleado); //llamo al metodo de la clase Empresa y le paso el numero de this Empleado
 	}
 	
 	
